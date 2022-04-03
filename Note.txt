@@ -1,0 +1,23 @@
+React Front To Back 2022
+https://www.udemy.com/course/react-front-to-back-2022/learn/lecture/29767686#content
+
+https://github.com/bradtraversy/feedback-app
+https://github.com/bradtraversy/github-finder-app
+https://github.com/bradtraversy/house-marketplace
+https://gist.github.com/bradtraversy
+
+https://gist.github.com/bradtraversy
+https://gist.github.com/bradtraversy/caab8ebd8ff4b6e947632887e0183761
+https://console.firebase.google.com/project/house-marketplace-app-4cb05/overview
+
+Part 1 is at C:\react\feedback-app
+Part 2 is at C:\react\github-finder
+Part 3 is at C:\react\react-sandbox
+This project is Part 4.
+
+=============================================================================
+
+PS C:\react> npx create-react-app house-marketplace --use-npm
+
+firebase app id: house-marketplace-app-4cb05
+
