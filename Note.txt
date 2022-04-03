@@ -16,8 +16,8 @@ Part 3 is at C:\react\react-sandbox
 This project is Part 4.
 
 =============================================================================
+firebase app id: house-marketplace-app-4cb05
 
 PS C:\react> npx create-react-app house-marketplace --use-npm
-
-firebase app id: house-marketplace-app-4cb05
+PS C:\react\house-marketplace> npm install firebase
 
