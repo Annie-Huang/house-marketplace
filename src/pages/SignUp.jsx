@@ -6,10 +6,11 @@ import { useState } from 'react';
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: '',
   });
-  const { email, password } = formData;
+  const { name, email, password } = formData;
 
   const navigate = useNavigate();
 
@@ -27,6 +28,14 @@ const SignUp = () => {
           <p className='pageHeader'>Welcome Back!</p>
         </header>
         <form>
+          <input
+            type='text'
+            className='nameInput'
+            placeholder='Name'
+            id='name'
+            value={name}
+            onChange={onChange}
+          />
           <input
             type='email'
             className='emailInput'
