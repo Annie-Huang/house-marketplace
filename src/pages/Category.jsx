@@ -18,6 +18,26 @@ const Category = () => {
 
   const params = useParams();
 
+  useEffect(() => {
+    const fetchListings = async () => {
+      try {
+        // Get reference
+        const listingsRef = collection(db, 'listings');
+
+        // Create a query
+        // Old version (v8) has the syntax of firebase.get().where().orderBy()
+        const q = query(
+          listingsRef,
+          where('type', '==', params.categoryName),
+          orderBy('timestamp', 'desc'),
+          limit(10)
+        );
+      } catch (error) {}
+    };
+
+    fetchListings();
+  }, []);
+
   return <div>category</div>;
 };
 
