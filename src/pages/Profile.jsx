@@ -33,6 +33,7 @@ const Profile = () => {
     navigate('/');
   };
 
+  // firestore doesn't allow to change of email as it's the key of the user.
   const onSubmit = async () => {
     try {
       if (auth.currentUser.displayName !== name) {
