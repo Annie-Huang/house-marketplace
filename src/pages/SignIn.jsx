@@ -4,6 +4,7 @@ import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRig
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import OAuth from '../components/OAuth';
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -87,7 +88,7 @@ const SignIn = () => {
           </div>
         </form>
 
-        {/* Google OAuth */}
+        <OAuth />
 
         <Link to='/sign-up' className='registerLink'>
           Sign Up Instead
