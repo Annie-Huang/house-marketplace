@@ -10,7 +10,7 @@ https://gist.github.com/bradtraversy
 Whole setup: https://gist.github.com/bradtraversy/caab8ebd8ff4b6e947632887e0183761
 Step 8: https://gist.github.com/bradtraversy/6d7de7e877d169a6aa4e61140d25767f
 
-https://console.firebase.google.com/project/house-marketplace-app-4cb05/overview
+https://console.firebase.google.com/project/house-marketplace-app-4cb05/overview    <<<<<<<
 https://firebase.google.com/docs/auth/web/start#web-version-9
 https://firebase.google.com/docs/firestore/manage-data/add-data
 
