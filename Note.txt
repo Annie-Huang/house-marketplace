@@ -19,6 +19,7 @@ https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-1.2.1&ixid
 https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80
 
 https://github.com/fkhadra/react-toastify
+https://fkhadra.github.io/react-toastify/introduction/
 
 Part 1 is at C:\react\feedback-app
 Part 2 is at C:\react\github-finder
