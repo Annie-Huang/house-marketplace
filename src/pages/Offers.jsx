@@ -30,7 +30,7 @@ const Offers = () => {
         // Old version (v8) has the syntax of firebase.get().where().orderBy()
         const q = query(
           listingsRef,
-          where('type', '==', params.categoryName),
+          where('offer', '==', true),
           orderBy('timestamp', 'desc'),
           limit(10)
         );
@@ -56,16 +56,12 @@ const Offers = () => {
     };
 
     fetchListings();
-  }, [params.categoryName]);
+  }, []);
 
   return (
     <div className='category'>
       <header>
-        <p className='pageHeader'>
-          {params.categoryName === 'rent'
-            ? 'Please for rent'
-            : 'Place for sale'}
-        </p>
+        <p className='pageHeader'>Offers</p>
       </header>
 
       {loading ? (
@@ -85,7 +81,7 @@ const Offers = () => {
           </main>
         </>
       ) : (
-        <p>No listings for {params.categoryName}</p>
+        <p>There are not current offers</p>
       )}
     </div>
   );
