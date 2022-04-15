@@ -12,6 +12,7 @@ Step 8: https://gist.github.com/bradtraversy/6d7de7e877d169a6aa4e61140d25767f
 
 https://console.firebase.google.com/project/house-marketplace-app-4cb05/overview
 https://firebase.google.com/docs/auth/web/start#web-version-9
+https://firebase.google.com/docs/firestore/manage-data/add-data
 
 https://unsplash.com/photos/CwTfKH5edSk
 https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2284&q=80

@@ -7,6 +7,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth';
+import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
 
 const SignUp = () => {
@@ -43,6 +44,13 @@ const SignUp = () => {
       const user = userCredential.user;
 
       updateProfile(auth.currentUser, { displayName: name });
+
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      // https://firebase.google.com/docs/firestore/manage-data/add-data#set_a_document
+      await setDoc(doc(db, 'users', user.uid), formDataCopy);
 
       navigate('/');
     } catch (error) {
