@@ -32,6 +32,17 @@ const Profile = () => {
     navigate('/');
   };
 
+  const onSubmit = () => {
+    console.log(123);
+  };
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  };
+
   return (
     <div className='profile'>
       <header className='profileHeader'>
@@ -44,9 +55,28 @@ const Profile = () => {
       <main>
         <div className='profileDetailsHeader'>
           <p className='profileDetailsText'>Personal Details</p>
-          <p className='changePersonalDetails'>
+          <p
+            className='changePersonalDetails'
+            onClick={() => {
+              changeDetails && onSubmit();
+              setChangeDetails((prevState) => !prevState);
+            }}
+          >
             {changeDetails ? 'done' : 'change'}
           </p>
+        </div>
+
+        <div className='profileCard'>
+          <form action=''>
+            <input
+              type='text'
+              id='name'
+              className={!changeDetails ? 'profileName' : 'profileNameActive'}
+              disabled={!changeDetails}
+              value={name}
+              onChange={onChange}
+            />
+          </form>
         </div>
       </main>
     </div>
