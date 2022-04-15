@@ -18,6 +18,19 @@ const ListingItem = ({ listing, id }) => {
         <div className='categoryListingDetails'>
           <p className='categoryListingLocation'>{listing.location}</p>
           <p className='categoryListingName'>{listing.name}</p>
+
+          {/* The following is to change 2000 to 2,000 */}
+          <p className='categoryListingPrice'>
+            $
+            {listing.offer
+              ? listing.discountedPrice
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              : listing.regularPrice
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            {listing.type === 'rent' && ' / Month'}
+          </p>
         </div>
       </Link>
     </li>
