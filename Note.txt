@@ -18,6 +18,8 @@ https://unsplash.com/photos/CwTfKH5edSk
 https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2284&q=80
 https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80
 
+https://github.com/fkhadra/react-toastify
+
 Part 1 is at C:\react\feedback-app
 Part 2 is at C:\react\github-finder
 Part 3 is at C:\react\react-sandbox
@@ -31,3 +33,4 @@ Password: annieannie
 PS C:\react> npx create-react-app house-marketplace --use-npm
 PS C:\react\house-marketplace> npm install firebase
 PS C:\react\house-marketplace> npm i react-router-dom
+PS C:\react\house-marketplace> npm install --save react-toastify
