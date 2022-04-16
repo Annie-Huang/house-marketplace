@@ -22,6 +22,22 @@ const CreateListing = () => {
     longitude: 0,
   });
 
+  const {
+    type,
+    name,
+    bedrooms,
+    bathrooms,
+    parking,
+    furnished,
+    address,
+    offer,
+    regularPrice,
+    discountedPrice,
+    images,
+    latitude,
+    longitude,
+  } = formData;
+
   const auth = getAuth();
   const navigate = useNavigate();
 
@@ -39,7 +55,21 @@ const CreateListing = () => {
     return <Spinner />;
   }
 
-  return <div>Create</div>;
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <div className='profile'>
+      <header>
+        <p className='pageHeader'>Create a Listing</p>
+      </header>
+
+      <main>
+        <form onSubmit={onSubmit}></form>
+      </main>
+    </div>
+  );
 };
 
 export default CreateListing;
