@@ -114,7 +114,6 @@ o do a functional update 'setFormData(f => ...)' if you only need 'formData' in 
     } else {
       geolocation.lat = latitude;
       geolocation.lng = longitude;
-      location = address;
     }
 
     // Store images in firebase
@@ -183,6 +182,7 @@ o do a functional update 'setFormData(f => ...)' if you only need 'formData' in 
       ...formData,
       imgUrls,
       geolocation,
+      location: address,
       timestamp: serverTimestamp(),
     };
     delete formDataCopy.images;
