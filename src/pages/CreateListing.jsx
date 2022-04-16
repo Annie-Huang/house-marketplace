@@ -78,7 +78,14 @@ const CreateListing = () => {
       }));
     }
 
-    // Text/Booleans/Numbers
+    // Text/Booleans/Numbers  <<< ??? I thought number also need to cast to '+'?
+    if (e.target.files) {
+      setFormData((prevState) => ({
+        ...prevState,
+        // Only choose e.target.value (for text and number) if boolean !== (null or undefined)
+        [e.target.id]: boolean ?? e.target.value,
+      }));
+    }
   };
 
   return (
