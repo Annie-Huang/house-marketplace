@@ -6,6 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
@@ -176,7 +177,18 @@ o do a functional update 'setFormData(f => ...)' if you only need 'formData' in 
     });
 
     // To test this you will need to choose multiple image files on window explorer when choose images.
-    console.log(imgUrls);
+    console.log('imgUrls=', imgUrls);
+
+    const formDataCopy = {
+      ...formData,
+      imgUrls,
+      geolocation,
+      timestamp: serverTimestamp(),
+    };
+    delete formDataCopy.images;
+    delete formDataCopy.address;
+    location && (formDataCopy.location = location);
+    !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
     setLoading(false);
   };
