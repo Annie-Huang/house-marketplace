@@ -73,6 +73,15 @@ const CreateListing = () => {
       toast.error('Max 6 images');
       return;
     }
+    let geolocation = {};
+    let location;
+
+    if (geolocationEnabled) {
+    } else {
+      geolocation.lat = latitude;
+      geolocation.lng = longitude;
+      location = address;
+    }
   };
 
   const onMutate = (e) => {
