@@ -5,6 +5,7 @@ import Spinner from '../components/Spinner';
 
 const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
@@ -33,6 +34,10 @@ const CreateListing = () => {
       }
     });
   }, []);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return <div>Create</div>;
 };
