@@ -14,6 +14,10 @@ https://console.firebase.google.com/project/house-marketplace-app-4cb05/overview
 https://firebase.google.com/docs/auth/web/start#web-version-9
 https://firebase.google.com/docs/firestore/manage-data/add-data
 
+https://console.cloud.google.com/home/dashboard?project=feisty-mason-296402&pli=1
+https://console.cloud.google.com/google/maps-apis/api-list?project=feisty-mason-296402
+credential key: AIzaSyBM2bCgJ5IjAC3vVmKEppGhUbHqYbEoP14
+
 https://unsplash.com/photos/CwTfKH5edSk
 https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2284&q=80
 https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80

@@ -57,7 +57,7 @@ const CreateListing = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log('formData=', formData);
   };
 
   const onMutate = (e) => {
