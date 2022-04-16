@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 
 const CreateListing = () => {
-  const [geolocationEnabled, setGeolocationEnabled] = useState(false);
+  const [geolocationEnabled, setGeolocationEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -14,7 +14,7 @@ const CreateListing = () => {
     parking: false,
     furnished: false,
     address: '',
-    offer: true,
+    offer: false,
     regularPrice: 0,
     discountedPrice: 0,
     images: {},
