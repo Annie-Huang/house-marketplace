@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 
 const CreateListing = () => {
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true);
+  const [geolocationEnabled, setGeolocationEnabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -183,6 +183,43 @@ const CreateListing = () => {
               No
             </button>
           </div>
+
+          <label className='formLabel'>Address</label>
+          <textarea
+            className='formInputAddress'
+            type='text'
+            id='address'
+            value={address}
+            onChange={onMutate}
+            required
+          />
+
+          {!geolocationEnabled && (
+            <div className='formLatLng flex'>
+              <div>
+                <label className='formLabel'>Latitude</label>
+                <input
+                  className='formInputSmall'
+                  type='number'
+                  id='latitude'
+                  value={latitude}
+                  onChange={onMutate}
+                  required
+                />
+              </div>
+              <div>
+                <label className='formLabel'>Longitude</label>
+                <input
+                  className='formInputSmall'
+                  type='number'
+                  id='longitude'
+                  value={longitude}
+                  onChange={onMutate}
+                  required
+                />
+              </div>
+            </div>
+          )}
         </form>
       </main>
     </div>
