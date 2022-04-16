@@ -44,3 +44,5 @@ PS C:\react\house-marketplace> npm install firebase
 PS C:\react\house-marketplace> npm i react-router-dom
 PS C:\react\house-marketplace> npm install --save react-toastify
 PS C:\react\house-marketplace> npm i uuid
+
+http://localhost:3000/category/rent/uYOnjQjzKzvTcZfQHQmt
