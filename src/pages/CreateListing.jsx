@@ -71,6 +71,12 @@ const CreateListing = () => {
     }
 
     // Files,
+    if (e.target.files) {
+      setFormData((prevState) => ({
+        ...prevState,
+        images: e.target.files,
+      }));
+    }
 
     // Text/Booleans/Numbers
   };
