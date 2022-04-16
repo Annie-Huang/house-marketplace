@@ -57,6 +57,7 @@ const CreateListing = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
   };
 
   const onMutate = (e) => {
@@ -79,7 +80,7 @@ const CreateListing = () => {
     }
 
     // Text/Booleans/Numbers  <<< ??? I thought number also need to cast to '+'?
-    if (e.target.files) {
+    if (!e.target.files) {
       setFormData((prevState) => ({
         ...prevState,
         // Only choose e.target.value (for text and number) if boolean !== (null or undefined)
