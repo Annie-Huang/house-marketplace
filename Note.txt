@@ -15,6 +15,7 @@ https://firebase.google.com/docs/auth/web/start#web-version-9
 https://firebase.google.com/docs/firestore/manage-data/add-data
 https://firebase.google.com/docs/storage/web/upload-files
 https://firebase.google.com/docs/storage/web/upload-files#monitor_upload_progress
+https://firebase.google.com/docs/storage/web/upload-files#upload_files
 
 https://console.cloud.google.com/home/dashboard?project=feisty-mason-296402&pli=1
 https://console.cloud.google.com/google/maps-apis/api-list?project=feisty-mason-296402

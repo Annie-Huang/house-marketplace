@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
+import { db } from '../firebase.config';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import { toast } from 'react-toastify';
+import { v4 as uuidv4 } from 'uuid';
 
 const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true);
@@ -102,9 +110,19 @@ const CreateListing = () => {
       geolocation.lat = latitude;
       geolocation.lng = longitude;
       location = address;
-
-      console.log(geolocation, location);
     }
+
+    // Store images in firebase
+    const storeImage = async (image) => {
+      return new Promise((resolve, reject) => {
+        const storage = getStorage();
+        const fileName = `${auth.currentUser.uid}-${image.name}-${uuidv4()}`;
+
+        const storageRef = ref(storage, 'images/' + fileName);
+
+        const uploadTask = uploadBytesResumable(storageRef, image);
+      });
+    };
 
     setLoading(false);
   };
