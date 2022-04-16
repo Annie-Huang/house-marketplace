@@ -59,6 +59,8 @@ const CreateListing = () => {
     e.preventDefault();
   };
 
+  const onMutate = (e) => {};
+
   return (
     <div className='profile'>
       <header>
@@ -66,7 +68,29 @@ const CreateListing = () => {
       </header>
 
       <main>
-        <form onSubmit={onSubmit}></form>
+        <form onSubmit={onSubmit}>
+          <label className='formLabel'>Sell / Rent</label>
+          <div className='formButtons'>
+            <button
+              type='button'
+              className={type === 'sale' ? 'formButtonActive' : 'formButton'}
+              id='type'
+              value='sale'
+              onClick={onMutate}
+            >
+              Sell
+            </button>
+            <button
+              type='button'
+              className={type === 'rent' ? 'formButtonActive' : 'formButton'}
+              id='type'
+              value='rent'
+              onClick={onMutate}
+            >
+              Rent
+            </button>
+          </div>
+        </form>
       </main>
     </div>
   );
