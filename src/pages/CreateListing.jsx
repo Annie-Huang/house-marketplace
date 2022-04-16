@@ -59,7 +59,21 @@ const CreateListing = () => {
     e.preventDefault();
   };
 
-  const onMutate = (e) => {};
+  const onMutate = (e) => {
+    // boolean will come back as 'true' or 'false' string, need to specially handle it.
+    let boolean = null;
+
+    if (e.target.value === 'true') {
+      boolean = true;
+    }
+    if (e.target.value === 'false') {
+      boolean = false;
+    }
+
+    // Files,
+
+    // Text/Booleans/Numbers
+  };
 
   return (
     <div className='profile'>
