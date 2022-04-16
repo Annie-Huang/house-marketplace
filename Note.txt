@@ -13,6 +13,8 @@ Step 8: https://gist.github.com/bradtraversy/6d7de7e877d169a6aa4e61140d25767f
 https://console.firebase.google.com/project/house-marketplace-app-4cb05/overview    <<<<<<<
 https://firebase.google.com/docs/auth/web/start#web-version-9
 https://firebase.google.com/docs/firestore/manage-data/add-data
+https://firebase.google.com/docs/storage/web/upload-files
+https://firebase.google.com/docs/storage/web/upload-files#monitor_upload_progress
 
 https://console.cloud.google.com/home/dashboard?project=feisty-mason-296402&pli=1
 https://console.cloud.google.com/google/maps-apis/api-list?project=feisty-mason-296402
@@ -40,3 +42,4 @@ PS C:\react> npx create-react-app house-marketplace --use-npm
 PS C:\react\house-marketplace> npm install firebase
 PS C:\react\house-marketplace> npm i react-router-dom
 PS C:\react\house-marketplace> npm install --save react-toastify
+PS C:\react\house-marketplace> npm i uuid
