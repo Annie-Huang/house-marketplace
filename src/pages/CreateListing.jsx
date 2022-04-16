@@ -90,6 +90,47 @@ const CreateListing = () => {
               Rent
             </button>
           </div>
+
+          <label className='formLabel'>Name</label>
+          <input
+            className='formInputName'
+            type='text'
+            id='name'
+            value={name}
+            onChange={onMutate}
+            maxLength='32'
+            minLength='10'
+            required
+          />
+
+          <div className='formRooms flex'>
+            <div>
+              <label className='formLabel'>Bedrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bedrooms'
+                value={bedrooms}
+                onChange={onMutate}
+                min='1'
+                max='50'
+                required
+              />
+            </div>
+            <div>
+              <label className='formLabel'>Bathrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bathrooms'
+                value={bathrooms}
+                onChange={onMutate}
+                min='1'
+                max='50'
+                required
+              />
+            </div>
+          </div>
         </form>
       </main>
     </div>
