@@ -56,7 +56,7 @@ const CreateListing = () => {
     return <Spinner />;
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     console.log('formData=', formData);
 
@@ -73,15 +73,24 @@ const CreateListing = () => {
       toast.error('Max 6 images');
       return;
     }
+
     let geolocation = {};
     let location;
 
     if (geolocationEnabled) {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyBM2bCgJ5IjAC3vVmKEppGhUbHqYbEoP14`
+      );
+
+      const data = await response.json();
+      console.log(data);
     } else {
       geolocation.lat = latitude;
       geolocation.lng = longitude;
       location = address;
     }
+
+    setLoading(false);
   };
 
   const onMutate = (e) => {
