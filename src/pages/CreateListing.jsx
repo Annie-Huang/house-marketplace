@@ -58,11 +58,15 @@ const CreateListing = () => {
         navigate('/sign-in');
       }
     });
-  }, []);
 
-  if (loading) {
-    return <Spinner />;
-  }
+    /*
+    Current we are getting waring of:
+      Line 61:6:   React Hook useEffect has missing dependencies: 'auth', 'formData', and 'navigate'. Either include them or remove the dependency array. You can als
+o do a functional update 'setFormData(f => ...)' if you only need 'formData' in the 'setFormData' call  react-hooks/exhaustive-deps
+    But if we add forData as dependency and have setFormData inside useEffect, it will get to infinite loop. Add the disable lint setting instead
+     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -142,10 +146,13 @@ const CreateListing = () => {
               case 'running':
                 console.log('Upload is running');
                 break;
+              default:
+                break;
             }
           },
           (error) => {
             // Handle unsuccessful uploads
+            console.log('error=', error);
             reject(error);
           },
           () => {
@@ -167,6 +174,9 @@ const CreateListing = () => {
       toast.error('Images not uploaded');
       return;
     });
+
+    // To test this you will need to choose multiple image files on window explorer when choose images.
+    console.log(imgUrls);
 
     setLoading(false);
   };
@@ -199,6 +209,10 @@ const CreateListing = () => {
       }));
     }
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className='profile'>
