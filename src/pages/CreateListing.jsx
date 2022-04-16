@@ -190,7 +190,10 @@ o do a functional update 'setFormData(f => ...)' if you only need 'formData' in 
     location && (formDataCopy.location = location);
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
+    const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
     setLoading(false);
+    toast.success('Listing saved');
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };
 
   const onMutate = (e) => {
