@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import Spinner from '../components/Spinner';
 
 const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true);
@@ -17,6 +20,19 @@ const CreateListing = () => {
     latitude: 0,
     longitude: 0,
   });
+
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setFormData({ ...formData, userRef: user.uid });
+      } else {
+        navigate('/sign-in');
+      }
+    });
+  }, []);
 
   return <div>Create</div>;
 };
