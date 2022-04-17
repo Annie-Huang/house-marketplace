@@ -10,6 +10,8 @@ import Spinner from '../components/Spinner';
 import shareIcon from '../assets/svg/shareIcon.svg';
 import { useEffect, useState } from 'react';
 
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 const Listing = () => {
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
