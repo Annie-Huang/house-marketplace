@@ -31,6 +31,9 @@ import homeIcon from '../assets/svg/homeIcon.svg';
 };*/
 
 const Profile = () => {
+  const [loading, setLoading] = useState(true);
+  const [listings, setListings] = useState(null);
+
   const auth = getAuth();
   const [changeDetails, setChangeDetails] = useState(false);
   const [formData, setFormData] = useState({
@@ -61,6 +64,9 @@ const Profile = () => {
           data: doc.data(),
         });
       });
+
+      setListings(listings);
+      setLoading(false);
     };
 
     fetchUserListings();
