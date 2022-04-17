@@ -112,7 +112,6 @@ const Listing = () => {
             zoom={13}
             scrollWheelZoom={false}
           >
-            {/* TileLayer and Popup does not work with React 18 */}
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url='https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png'
