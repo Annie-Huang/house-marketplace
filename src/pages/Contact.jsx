@@ -2,7 +2,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Contact = () => {
   const [message, setMessage] = useState('');
@@ -12,6 +12,21 @@ const Contact = () => {
   const [searchParam, setSearchParams] = useSearchParams();
 
   const params = useParams();
+
+  useEffect(() => {
+    const getLandlord = async () => {
+      const docRef = doc(db, 'users', params.landlordId);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setLandlord(docSnap.data());
+      } else {
+        toast.error('Could not get landlord data');
+      }
+    };
+
+    getLandlord();
+  }, [params.landlordId]);
 
   return <div>Contact</div>;
 };
