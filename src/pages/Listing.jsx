@@ -30,6 +30,9 @@ const Listing = () => {
     fetchListing();
   }, [navigate, params.listingId]);
 
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <main>
       {/* SLIDER */}
@@ -44,6 +47,8 @@ const Listing = () => {
       >
         <img src={shareIcon} alt='' />
       </div>
+
+      {shareLinkCopied && <p className='linkCopied'>Link Copied</p>}
     </main>
   );
 };
