@@ -9,7 +9,7 @@ const Contact = () => {
   const [landlord, setLandlord] = useState(null);
 
   // https://reactrouter.com/docs/en/v6/api#usesearchparams
-  const [searchParam, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const params = useParams();
 
@@ -42,6 +42,7 @@ const Contact = () => {
             <p className='landlordName'>Contact {landlord.name}</p>
           </div>
 
+          {/* http://localhost:3000/contact/V0eYE3LD3jUopS4aADE55IRHMQb2?listingName=Beautiful%20Stratford%20Condo */}
           <form action='' className='messageForm'>
             <div className='messageDiv'>
               <label htmlFor='message' className='messageLabel'>
@@ -55,6 +56,16 @@ const Contact = () => {
                 onChange={onChange}
               ></textarea>
             </div>
+
+            <a
+              href={`mailto:${landlord.email}?Subject=${searchParams.get(
+                'listingName'
+              )}&body=${message}`}
+            >
+              <button type='button' className='primaryButton'>
+                Send Message
+              </button>
+            </a>
           </form>
         </main>
       )}
