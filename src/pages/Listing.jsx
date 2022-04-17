@@ -88,7 +88,14 @@ const Listing = () => {
         </ul>
         <p className='listingLocationTitle'>Location</p>
 
-        {/* MAP */}
+        <div className='leafletContainer'>
+          <MapContainer
+            style={{ height: '100%', width: '100%' }}
+            center={[listing.geolocation.lat, listing.geolocation.lng]}
+            zoom={13}
+            scrollWheelZoom={false}
+          ></MapContainer>
+        </div>
 
         {auth.currentUser?.uid !== listing.userRef && (
           <Link
