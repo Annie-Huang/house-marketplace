@@ -37,6 +37,7 @@ const Slider = () => {
         });
       });
 
+      console.log(listings);
       setListings(listings);
       setLoading(false);
     };
@@ -44,7 +45,17 @@ const Slider = () => {
     fetchListings();
   }, []);
 
-  return <div>Slider</div>;
+  if (loading) {
+    return <Spinner />;
+  }
+
+  return (
+    listings && (
+      <>
+        <p className='exploreHeading'>Recommended</p>
+      </>
+    )
+  );
 };
 
 export default Slider;
