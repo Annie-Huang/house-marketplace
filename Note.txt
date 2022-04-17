@@ -32,6 +32,7 @@ https://reactrouter.com/docs/en/v6/api#usesearchparams
 https://leafletjs.com/
 https://leafletjs.com/SlavaUkraini/examples/quick-start/
 https://react-leaflet.js.org/
+https://swiperjs.com/react
 
 Part 1 is at C:\react\feedback-app
 Part 2 is at C:\react\github-finder
@@ -52,3 +53,4 @@ PS C:\react\house-marketplace> npm i uuid
 http://localhost:3000/category/rent/uYOnjQjzKzvTcZfQHQmt
 
 PS C:\react\house-marketplace> npm i leaflet react-leaflet --force      <<<< because react-leaflet is still using react v17
+PS C:\react\house-marketplace> npm i swiper@6.8.1
