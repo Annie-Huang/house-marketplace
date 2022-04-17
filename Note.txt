@@ -29,7 +29,9 @@ https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=Mn
 https://github.com/fkhadra/react-toastify
 https://fkhadra.github.io/react-toastify/introduction/
 https://reactrouter.com/docs/en/v6/api#usesearchparams
-
+https://leafletjs.com/
+https://leafletjs.com/SlavaUkraini/examples/quick-start/
+https://react-leaflet.js.org/
 
 Part 1 is at C:\react\feedback-app
 Part 2 is at C:\react\github-finder
