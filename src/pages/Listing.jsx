@@ -51,7 +51,7 @@ const Listing = () => {
       {shareLinkCopied && <p className='linkCopied'>Link Copied</p>}
 
       <div className='listingDetails'>
-        <div className='listingName'>
+        <p className='listingName'>
           {/* Price to be separated for every 3 digits.*/}
           {listing.name} - $
           {listing.offer
@@ -61,7 +61,16 @@ const Listing = () => {
             : listing.regularPrice
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-        </div>
+        </p>
+        <p className='listingLocation'>{listing.location}</p>
+        <p className='listingType'>
+          For {listing.type === 'rent' ? 'Rent' : 'Sale'}
+        </p>
+        {listing.offer && (
+          <p className='discountPrice'>
+            ${listing.regularPrice - listing.discountedPrice} discount
+          </p>
+        )}
       </div>
     </main>
   );
