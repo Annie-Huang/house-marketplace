@@ -50,3 +50,5 @@ PS C:\react\house-marketplace> npm install --save react-toastify
 PS C:\react\house-marketplace> npm i uuid
 
 http://localhost:3000/category/rent/uYOnjQjzKzvTcZfQHQmt
+
+PS C:\react\house-marketplace> npm i leaflet react-leaflet --force      <<<< because react-leaflet is still using react v17
