@@ -2,15 +2,12 @@ import { getAuth, updateProfile } from 'firebase/auth';
 import {
   updateDoc,
   doc,
-  collections,
   getDocs,
   query,
   where,
   orderBy,
   deleteDoc,
-  getDoc,
   collection,
-  limit,
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { useEffect, useState } from 'react';

@@ -9,6 +9,7 @@ const Contact = () => {
   const [landlord, setLandlord] = useState(null);
 
   // https://reactrouter.com/docs/en/v6/api#usesearchparams
+  // eslint-disable-next-line
   const [searchParams, setSearchParams] = useSearchParams();
 
   const params = useParams();
