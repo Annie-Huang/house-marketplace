@@ -6,14 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage';
-import {
-  doc,
-  updateDoc,
-  getDoc,
-  addDoc,
-  collection,
-  serverTimestamp,
-} from 'firebase/firestore';
+import { doc, updateDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { useNavigate, useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
@@ -77,6 +70,7 @@ const EditListing = () => {
 
       if (docSnap.exists()) {
         setListing(docSnap.data());
+        // We cannot make the added images back, you will have to readd the images.
         setFormData({ ...docSnap.data(), address: docSnap.data().location });
         setLoading(false);
       } else {
@@ -228,7 +222,9 @@ o do a functional update 'setFormData(f => ...)' if you only need 'formData' in 
     location && (formDataCopy.location = location);
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
-    const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
+    // Update listing
+    const docRef = doc(db, 'listings', params.listingId);
+    await updateDoc(docRef, formDataCopy);
     setLoading(false);
     toast.success('Listing saved');
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
