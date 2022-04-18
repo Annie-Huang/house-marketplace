@@ -70,7 +70,7 @@ const Offers = () => {
       // Old version (v8) has the syntax of firebase.get().where().orderBy()
       const q = query(
         listingsRef,
-        where('type', '==', params.categoryName),
+        where('offer', '==', true),
         orderBy('timestamp', 'desc'),
         startAfter(lastFetchedListing),
         limit(10)
@@ -120,6 +120,14 @@ const Offers = () => {
               ))}
             </ul>
           </main>
+
+          <br />
+          <br />
+          {lastFetchedListing && (
+            <p className='loadMore' onClick={onFetchMoreListings}>
+              Load More
+            </p>
+          )}
         </>
       ) : (
         <p>There are not current offers</p>
