@@ -62,6 +62,43 @@ const Category = () => {
     fetchListings();
   }, [params.categoryName]);
 
+  const fetchListings = async () => {
+    try {
+      // Get reference
+      const listingsRef = collection(db, 'listings');
+
+      // Create a query
+      // Old version (v8) has the syntax of firebase.get().where().orderBy()
+      const q = query(
+        listingsRef,
+        where('type', '==', params.categoryName),
+        orderBy('timestamp', 'desc'),
+        limit(10)
+      );
+
+      // Execute query
+      const querySnap = await getDocs(q);
+
+      let listings = [];
+
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+      setLastFetchedListing(lastVisible);
+
+      querySnap.forEach((doc) => {
+        console.log(doc.data());
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        });
+      });
+
+      setListings(listings);
+      setLoading(false);
+    } catch (error) {
+      toast.error('Could not fetch listings');
+    }
+  };
+
   return (
     <div className='category'>
       <header>
