@@ -21,7 +21,7 @@ import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 
 const EditListing = () => {
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true);
+  const [geolocationEnabled, _] = useState(true);
   const [loading, setLoading] = useState(false);
   const [listing, setListing] = useState(null);
   const [formData, setFormData] = useState({
@@ -69,6 +69,9 @@ const EditListing = () => {
       if (docSnap.exists()) {
         setListing(docSnap.data());
         setLoading(false);
+      } else {
+        navigate('/');
+        toast.error('Listing does not exist');
       }
     };
 
