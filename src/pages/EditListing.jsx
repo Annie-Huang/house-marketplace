@@ -68,6 +68,7 @@ const EditListing = () => {
 
       if (docSnap.exists()) {
         setListing(docSnap.data());
+        setFormData({ ...docSnap.data(), address: docSnap.data().location });
         setLoading(false);
       } else {
         navigate('/');
@@ -76,7 +77,7 @@ const EditListing = () => {
     };
 
     fetchListing();
-  }, []);
+  }, [params.listingId, navigate]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
