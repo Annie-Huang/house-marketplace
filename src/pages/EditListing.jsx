@@ -15,7 +15,7 @@ import {
   serverTimestamp,
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
@@ -23,6 +23,7 @@ import { v4 as uuidv4 } from 'uuid';
 const EditListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [listing, setListing] = useState(null);
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
@@ -57,6 +58,22 @@ const EditListing = () => {
 
   const auth = getAuth();
   const navigate = useNavigate();
+  const params = useParams();
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchListing = async () => {
+      const docRef = doc(db, 'listings', params.listingId);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setListing(docSnap.data());
+        setLoading(false);
+      }
+    };
+
+    fetchListing();
+  }, []);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
