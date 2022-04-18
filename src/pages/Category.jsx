@@ -62,7 +62,8 @@ const Category = () => {
     fetchListings();
   }, [params.categoryName]);
 
-  const fetchListings = async () => {
+  // Pagination / Load More
+  const onFetchMoreListings = async () => {
     try {
       // Get reference
       const listingsRef = collection(db, 'listings');
@@ -73,6 +74,7 @@ const Category = () => {
         listingsRef,
         where('type', '==', params.categoryName),
         orderBy('timestamp', 'desc'),
+        startAfter(lastFetchedListing),
         limit(10)
       );
 
@@ -92,7 +94,7 @@ const Category = () => {
         });
       });
 
-      setListings(listings);
+      setListings((prevState) => [...prevState, ...listings]);
       setLoading(false);
     } catch (error) {
       toast.error('Could not fetch listings');
