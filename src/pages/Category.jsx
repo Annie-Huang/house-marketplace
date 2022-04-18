@@ -6,6 +6,7 @@ import {
   where,
   orderBy,
   limit,
+  startAfter,
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
@@ -16,6 +17,7 @@ import ListingItem from '../components/ListingItem';
 const Category = () => {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [lastFetchedListing, setLastFetchedListing] = useState(null);
 
   const params = useParams();
 
@@ -38,6 +40,9 @@ const Category = () => {
         const querySnap = await getDocs(q);
 
         let listings = [];
+
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+        setLastFetchedListing(lastVisible);
 
         querySnap.forEach((doc) => {
           console.log(doc.data());
