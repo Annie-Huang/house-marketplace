@@ -60,6 +60,15 @@ const EditListing = () => {
   const navigate = useNavigate();
   const params = useParams();
 
+  // Redirect if listing is not user
+  useEffect(() => {
+    if (listing && listing.userRef !== auth.currentUser.uid) {
+      toast.error('You can not edit that listing');
+      navigate('/');
+    }
+  }, []);
+
+  // Fetch listing to edit
   useEffect(() => {
     setLoading(true);
     const fetchListing = async () => {
@@ -79,6 +88,7 @@ const EditListing = () => {
     fetchListing();
   }, [params.listingId, navigate]);
 
+  // Sets userRef to logged in user
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
