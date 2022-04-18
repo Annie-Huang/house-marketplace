@@ -63,6 +63,7 @@ const Category = () => {
   }, [params.categoryName]);
 
   // Pagination / Load More
+  // Change fetchListings to limit(1) if you want to test onFetchMoreList
   const onFetchMoreListings = async () => {
     try {
       // Get reference
@@ -126,6 +127,14 @@ const Category = () => {
               ))}
             </ul>
           </main>
+
+          <br />
+          <br />
+          {lastFetchedListing && (
+            <p className='loadMore' onClick={onFetchMoreListings}>
+              Load More
+            </p>
+          )}
         </>
       ) : (
         <p>No listings for {params.categoryName}</p>
